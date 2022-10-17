@@ -1,0 +1,32 @@
+###
+###
+### Replace hvthang.xyz=Your-Domain
+
+<html>
+	<head>
+		<title>Secure Apache with Let's Encrypt on Rocky Linux</title>
+	</head>
+<body>
+	<center>	
+		<h1>Secure Apache with Let's Encrypt on Rocky Linux</h1>
+	</center>
+</body>
+</html>
+
+
+<VirtualHost *:80>
+	ServerName www.hvthang.xyz
+	ServerAlias hvthang.xyz
+	DocumentRoot /var/www/hvthang.xyz
+	#
+	<Directory /var/www/hvthang.xyz>
+		Options -Indexes +FollowSymLinks
+		AllowOverride All
+	</Directory>
+	#
+	ErrorLog /var/log/httpd/tecmint.info-error.log
+	CustomLog /var/log/httpd/tecmint.info-access.log combined
+</VirtualHost>
+	
+	
+
